@@ -1,0 +1,22 @@
+{
+  "name": "satellite-channel-subs-sys",
+  "version": "1.0.0",
+  "description": "Aim: To create a program to build a Satellite Channel (DTH) Subscription System like TataSky. The user should be able to subscribe to a Package with Annual plan. The user should also be able to subscribe to an add-on pack for a monthly subscription to a sports channel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shekhararpitji/Satellite-Channel-Subs-Sys.git"
+  },
+  "author": "Arpit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shekhararpitji/Satellite-Channel-Subs-Sys/issues"
+  },
+  "homepage": "https://github.com/shekhararpitji/Satellite-Channel-Subs-Sys#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
