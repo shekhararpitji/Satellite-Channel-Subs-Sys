@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Aim: To create a program to build a Satellite Channel (DTH) Subscription System like TataSky. The user should be able to subscribe to a Package with Annual plan. The user should also be able to subscribe to an add-on pack for a monthly subscription to a sports channel.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,14 @@
   },
   "homepage": "https://github.com/shekhararpitji/Satellite-Channel-Subs-Sys#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "nodemon": "^3.0.2",
+    "sequelize": "^6.35.2",
+    "sequelize-cli": "^6.6.2",
+    "uuid": "^9.0.1"
   }
 }
