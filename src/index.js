@@ -1,12 +1,18 @@
-import express from "express";
-import dotenv from 'dotenv'
-import router from "./routes/userRoutes.js";
-// import route from "./routes/userRoutes";
 
-dotenv.config();
+const bodyParser = require('body-parser');
+const express = require("express");
+require("dotenv").config();
+const authRoutes = require("./routes/authRoutes");
+const channelRoutes = require("./routes/channelRoutes");
+const port = process.env.PORT || 8080;
 const app = express();
-app.use("/user",router);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on http://localhost:${process.env.PORT}`);
-});
+app.use(bodyParser.json());
+
+app.use(express.json());
+
+app.use("/dth/auth/", authRoutes);
+app.use("/dth/channel/", channelRoutes);
+// app.use("/user", userRoutes);
+
+app.listen(port, () => console.log(`Server is running on port ${port}`));
