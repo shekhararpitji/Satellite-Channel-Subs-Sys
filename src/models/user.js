@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasOne(models.Subscription, {
-        foreignKey: "subscriptionId",
-        onDelete: "SET NULL", // or other onDelete action based on your requirements
-      });
+      // User.hasOne(models.Subscription, {
+      //   foreignKey: "subscriptionId",
+      //   onDelete: "SET NULL", // or other onDelete action based on your requirements
+      // });
     }
   }
   User.init(

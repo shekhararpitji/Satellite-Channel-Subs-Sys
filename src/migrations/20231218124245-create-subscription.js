@@ -12,16 +12,17 @@ module.exports = {
       startDate: {
         type: Sequelize.STRING,
       },
-      endDate: {
+      duration: {
         type: Sequelize.STRING,
       },
-      packageId: {
+
+      packId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: "Packages",
           key: "id",
-          as: "packageId",
+          as: "packId",
         },
       },
       userId: {

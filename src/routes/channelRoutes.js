@@ -1,22 +1,21 @@
 const express = require("express");
-const channelController = require("../controllers/channelController");
-const validator = require("../validators/channelValidator");
+const {
+  addChannel,
+  getAllChannel,
+  getSingleChannel,
+  deleteChannel,
+} = require("../controllers/channelController");
+const { validateAddChannel } = require("../validators/channelValidator");
+const { isOperator, isLogedIn } = require("../middlewares/roleMiddleware");
 
 const router = express.Router();
 
-// add new channel
-router.post(
-  "/add-channel",
-  validator.validateAddChannel,
-  channelController.addChannel
-);
+router.post("/add", validateAddChannel, isLogedIn, isOperator, addChannel);
 
-// get all channels
-router.get("/get-all-channels", channelController.getAllChannel);
+router.get("/get-all", getAllChannel);
 
-// get single channel by id
-router.get("/:id", channelController.getSingleChannel);
+router.get("/get/:name", isLogedIn, getSingleChannel);
 
-// delete channel by id
-router.delete("/:id", channelController.deleteChannel);
+router.delete("/delete/:name", isLogedIn, isOperator, deleteChannel);
+
 module.exports = router;
