@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Subscription.belongsTo(models.Package, {
-        foreignKey: "packageId",
+        foreignKey: "packId",
         onDelete: "SET NULL",
       });
       Subscription.belongsTo(models.User, {
@@ -21,10 +21,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Subscription.init(
     {
-      start_date: DataTypes.STRING,
-      end_date: DataTypes.STRING,
+      startDate: DataTypes.STRING,
       userId: DataTypes.INTEGER,
-      packageId: DataTypes.INTEGER,
+      packId: DataTypes.INTEGER,
+      duration: DataTypes.STRING,
     },
     {
       sequelize,

@@ -9,8 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Package.belongsTo(models.Channel, {
-        foreignKey: "channelId",
+      Package.hasMany(models.Channel, {
         onDelete: "SET NULL",
       });
     }
@@ -19,9 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       category: DataTypes.STRING,
-      duration: DataTypes.DATE,
+      duration: DataTypes.STRING,
       price: DataTypes.INTEGER,
-      channelId: DataTypes.INTEGER,
     },
     {
       sequelize,

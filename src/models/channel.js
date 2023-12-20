@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Channel extends Model {
     /**
@@ -11,19 +9,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Channel.hasMany(models.Package, {
-        foreignKey: "channelId",
+      Channel.belongsTo(models.Package, {
+        foreignKey: "packId",
         onDelete: "SET NULL", // or other onDelete action based on your requirements
       });
     }
   }
-  Channel.init({
-    name: DataTypes.STRING,
-    category: DataTypes.STRING,
-    description: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Channel',
-  });
+  Channel.init(
+    {
+      name: DataTypes.STRING,
+      category: DataTypes.STRING,
+      description: DataTypes.STRING,
+      packId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "Channel",
+    }
+  );
   return Channel;
 };

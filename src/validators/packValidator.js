@@ -2,10 +2,10 @@ const Joi = require("joi");
 
 const validateAddPackage = (req, res, next) => {
   const schema = Joi.object({
-    name: Joi.string(),
-    duration: Joi.string(),
-    category: Joi.string(),
-    price: Joi.number(),
+    name: Joi.string().required(),
+    duration: Joi.string().required(),
+    category: Joi.string().required(),
+    price: Joi.number().required(),
   });
 
   const { error, value } = schema.validate(req.body);

@@ -1,22 +1,20 @@
 const express = require("express");
-const packageController = require("../controllers/packageController");
-const joi_validator = require("../joi-validator/joi-channel-validations");
+const {
+  addPackage,
+  getAllPackage,
+  getSinglePackage,
+  deletePackage,
+} = require("../controllers/packController");
+const { validateAddPackage } = require("../validators/packValidator");
 
 const router = express.Router();
 
-// add new channel
-router.post(
-  "/add-channel",
-  joi_validator.validateAddChannel,
-  packageController.addPackage
-);
+router.post("/add", validateAddPackage, addPackage);
 
-// get all channels
-router.get("/get-all-channels", channelController.getAllChannel);
+router.get("/get-all", getAllPackage);
 
-// get single channel by id
-router.get("/:id", channelController.getSingleChannel);
+router.get("/:id", getSinglePackage);
 
-// delete channel by id
-router.delete("/:id", channelController.deleteChannel);
+router.delete("/delete/:id", deletePackage);
+
 module.exports = router;

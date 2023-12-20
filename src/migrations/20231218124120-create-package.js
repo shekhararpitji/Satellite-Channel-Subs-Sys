@@ -16,20 +16,12 @@ module.exports = {
         type: Sequelize.STRING,
       },
       duration: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
       },
       price: {
         type: Sequelize.INTEGER,
       },
-      channelId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: "Channels",
-          key: "id",
-          as: "channelId",
-        },
-      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
