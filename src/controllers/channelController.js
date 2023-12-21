@@ -37,7 +37,7 @@ const getAllChannel = async (req, res) => {
       .status(200)
       .json({ message: "Channels Retreive Sucessfully", channels });
   } catch (error) {
-    return res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error });
   }
 };
 

@@ -1,5 +1,4 @@
 const { Channel } = require("../models");
-
 exports.get1ChannelServices = async (req) => {
   const { name } = req.params;
   const channel = await Channel.findOne({
@@ -11,14 +10,15 @@ exports.get1ChannelServices = async (req) => {
 };
 
 exports.addChannelServices = async (req) => {
-  const { name, description, category, packId } = req.body;
+  const { name, description, category } = req.body;
 
-  const channel = await Channel.create({
-    name,
-    description,
-    category,
-    packId,
-  });
+  const channel = await Channel.create(
+    {
+      name,
+      description,
+      category,
+    }
+  );
   return channel;
 };
 

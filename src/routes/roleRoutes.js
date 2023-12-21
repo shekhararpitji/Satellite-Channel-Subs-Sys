@@ -18,9 +18,9 @@ router.post("/register", validateRegistration, registerCtrl);
 
 router.post("/login", validateLogin, loginCtrl);
 
-router.get("/get-all", isLogedIn, isAdmin, getAllCtrl);
+router.get("/get-all", getAllCtrl);
 
-router.get("/get/:id", isLogedIn, get1Ctrl);
+router.get("/get/:id", get1Ctrl);
 
 router.delete("/delete/:id", isLogedIn, isAdmin, deleteCtrl);
 
