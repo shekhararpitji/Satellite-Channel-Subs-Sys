@@ -14,7 +14,7 @@ router.post("/add", validateAddChannel, isLogedIn, isOperator, addChannel);
 
 router.get("/get-all", getAllChannel);
 
-router.get("/get/:name", isLogedIn, getSingleChannel);
+router.get("/get/:name", getSingleChannel);
 
 router.delete("/delete/:name", isLogedIn, isOperator, deleteChannel);
 

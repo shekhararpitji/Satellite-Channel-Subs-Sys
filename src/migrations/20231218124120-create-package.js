@@ -21,6 +21,16 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER,
       },
+      channelId:{
+        type:Sequelize.INTEGER,
+        references:{
+          model:"Channels",
+          key:"id",
+          as:"channelId"
+        },
+        onUpdate:"CASCADE",
+        onDelete:"SET NULL"
+      },
 
       createdAt: {
         allowNull: false,

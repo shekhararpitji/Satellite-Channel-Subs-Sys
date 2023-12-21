@@ -1,5 +1,5 @@
 const { Package } = require("../models");
-const { deletePackageServices, get1PackageServices } = require("../services/packServices");
+const { deletePackageServices, get1PackageServices, addPackageServices } = require("../services/packServices");
 
 exports.addPackage = async (req, res) => {
   try{

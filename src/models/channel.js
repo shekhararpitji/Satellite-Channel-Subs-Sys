@@ -9,18 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Channel.belongsTo(models.Package, {
-        foreignKey: "packId",
-        onDelete: "SET NULL", // or other onDelete action based on your requirements
-      });
+      
     }
   }
   Channel.init(
     {
       name: DataTypes.STRING,
       category: DataTypes.STRING,
-      description: DataTypes.STRING,
-      packId: DataTypes.INTEGER,
+      description: DataTypes.STRING
     },
     {
       sequelize,

@@ -14,3 +14,4 @@ exports.validateToken = async (req, res) => {
   const payload = JWT.verify(token, process.env.SECRET);
   return payload;
 };
+  

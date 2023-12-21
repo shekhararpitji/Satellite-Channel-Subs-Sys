@@ -27,9 +27,9 @@ exports.subscribePackage = async (userId, packId) => {
 exports.subscribeAddon = async (userId, packId) => {
   try {
     const user = await User.findByPk(userId);
-    const Package = await Package.findByPk(packId);
-
-    if (!user || !Package) {
+    const package = await Package.findByPk(packId);
+console.log(package)
+    if (!user || !package) {
       throw new Error("User or Package not found");
     }
     const startDate = Date.parse(new Date());
@@ -42,7 +42,7 @@ exports.subscribeAddon = async (userId, packId) => {
 
     return { success: true, subscription };
   } catch (error) {
-    throw new Error(`Subscription failed: ${error.message}`);
+    throw new Error(`Subscription failed: ${error}`);
   }
 };
 

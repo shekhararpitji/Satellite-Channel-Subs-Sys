@@ -5,7 +5,7 @@ const validateAddChannel = (req, res, next) => {
     name: Joi.string().required(),
     description: Joi.string().required(),
     category: Joi.string().required(),
-    packId: Joi.number().required(),
+ 
   });
 
   const { error, value } = schema.validate(req.body);
